@@ -1,7 +1,17 @@
-body {
-    background-color: lightgreen;
+body, html {
+    margin: 0%;
+    height: 100%;
 }
 
 .hide {
     display: none;
+}
+
+.hero-image {
+    background-image: url("assets\images\pexels-victor-freitas-841130.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
