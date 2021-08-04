@@ -1,14 +1,3 @@
-console.log("It's Working!!")
-
-//pseudocode
-
-//page 1
-//when the button gets clicked, redirect to page 2
-$("#make-it-happen-btn").on("click", function(){
-    window.document.location = "findWorkout.html";
-  });
-
-//page 2
 //when a button gets clicked it creates a search parameter
 //api/v2/exercise/?muscles=1&equipment=3
 //search parameters are joined together and stored in a variable
@@ -31,26 +20,66 @@ var showForm = function () {
 var getWorkout = function () {
     event.preventDefault();
     var workoutCat= $('#workout-cat').val();
+
+    getQuote();
     
-    var exerciseUrl = 'https://wger.de/api/v2/exercise/?limit=10&category=' + workoutCat;
+    var exerciseUrl = 'https://wger.de/api/v2/exercise/?limit=52&language=2&category=' + workoutCat;
 
     fetch(exerciseUrl)
-    .then(function (response){
+    .then(response => {
         if (response.staus === 404) {
             console.log('Error');
         }else {
             return response.json();
         };
-    }).then(function (data) {
+    }).then(data => {
         if (data.staus === 404) {
             console.log('Error');
         }else {
-            console.log(data.results);
+            shuffleWorkouts(data.results);
         };
     })
 };
 
+// Gets a list of quotes from an API
+function getQuote () {
+    fetch("https://type.fit/api/quotes")
+    .then(response => {
+        return response.json()
+    }).then(data => {
+        shuffleQuotes(data);
+    });
+};
 
+// Shuffles the quotes from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
+function shuffleQuotes (quote) {
+    var currentIndex = quote.length, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+    
+        [quote[currentIndex], quote[randomIndex]] = [
+          quote[randomIndex], quote[currentIndex]];
+        }
+    quote.splice(1);
+    console.log(quote);
+    // TODO: call function to display with quote param
+};
+
+// Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
+function shuffleWorkouts (workouts) {
+    var currentIndex = workouts.length, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+    
+        [workouts[currentIndex], workouts[randomIndex]] = [
+          workouts[randomIndex], workouts[currentIndex]];
+        }
+    workouts.splice(3);
+    console.log(workouts);
+    // TODO: call function to display with workouts param
+};
 
 // Event Listeners
 loadSiteBtn.click(showForm);
