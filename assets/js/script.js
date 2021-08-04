@@ -4,9 +4,6 @@ console.log("It's Working!!")
 
 //page 1
 //when the button gets clicked, redirect to page 2
-$("#make-it-happen-btn").on("click", function(){
-    window.document.location = "findWorkout.html";
-  });
 
 //page 2
 //when a button gets clicked it creates a search parameter
@@ -20,15 +17,59 @@ $("#make-it-happen-btn").on("click", function(){
 // the 'previous workouts' page loads a list of previous workouts from local storage
 var loadSiteBtn = $('#load-site-btn');
 var genWorkoutForm = $('#gen-workout');
+var workoutRec = ""
+var workoutObj = []
 
-// Shows the form to generate a workout and hides the starting screen
+// Shows the form to generate a workout and hides the starting screen and/or the workout screen
 var showForm = function () {
     $('#start-screen').addClass('hide');
     $('#workout-screen').removeClass('hide');
+    $('#request-el').addClass('hide');
+
 };
 
+//saves the current workout
+var saveWorkout = function() {
+  //selects the current 
+  console.log("Saving...");
+
+
+}
+
+function displayWorkout(workout){
+  console.log(workout)
+  //Shows the generated workout and hides the form to generate a workout
+  $('#workout-screen').addClass('hide');
+  $('#request-el').removeClass('hide');
+
+  //clears out previous information displayed in the movie card
+  $("#workout-generated").html("");
+
+  //adds the workout title to the generated workout div
+  var title = $("<h2>");
+  title.addClass("workout-title");
+  title.text(workout[0].name);
+  $("#workout-generated").append(title);
+
+  //add the workout description
+  $("#workout-generated").append(workout[0].description);
+
+  var saveBtn = $("<button>");
+  saveBtn.attr("id", "save-button");
+  saveBtn.text("Save Workout")
+  $("#workout-generated").append(saveBtn);
+  $("#save-button").click(saveWorkout);
+
+  var cancelBtn = $("<button>");
+  cancelBtn.attr("id", "cancel-button");
+  cancelBtn.text("Cancel")
+  $("#workout-generated").append(cancelBtn);
+  $("#cancel-button").click(showForm)
+
+}
+
 // Fetches to wger for the selected workout category to grab the ID that the API associates with each workout category
-var getWorkout = function () {
+var getWorkout = function (event) {
     event.preventDefault();
     var workoutCat= $('#workout-cat').val();
     
@@ -42,14 +83,11 @@ var getWorkout = function () {
             return response.json();
         };
     }).then(function (data) {
-        if (data.staus === 404) {
-            console.log('Error');
-        }else {
-            console.log(data.results);
-        };
+        
+    displayWorkout(data.results)
+    
     })
 };
-
 // Event Listeners
 loadSiteBtn.click(showForm);
 genWorkoutForm.submit(getWorkout);
