@@ -30,6 +30,8 @@ var getWorkout = function () {
     })
 };
 
+
+
 // Event Listeners
 loadSiteBtn.click(showForm);
 genWorkoutForm.submit(getWorkout);
