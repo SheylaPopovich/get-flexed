@@ -10,9 +10,45 @@
     <title>Inspirational Workout</title>
   </head>
   <body>
-    <h1>How are you doing World!</h1>
-    <p>Tanni</p>
+    <header>
+      <p><a href='past-workouts.html'>Track Workouts</a></p>
+    </header>
 
+    <div id='start-screen'>
+      <h1>That Feeling After a Killer Workout</h1>
+      <button id='load-site-btn'>Make it Happen</button>
+    </div>
+
+    <section class='hide' id='workout-screen'>
+      <div>
+        <h1>Take care of your everyday</h1>
+        <h3>Get inspired by today's workout</h3>
+      </div>
+      <div>
+        <form id='gen-workout'>
+          <label for='category'>Choose a workout:</label>
+          <br><br>
+          <select name='category' id='workout-cat'>
+            <option value='abs'>Abs</option>
+            <option value='arms'>Arms</option>
+            <option value='back'>Back</option>
+            <option value='calves'>Calves</option>
+            <option value='chest'>Chest</option>
+            <option value='legs'>Legs</option>
+            <option value='shoulders'>Shoulders</option>
+          </select>
+          <br><br>
+          <input type='submit' value='submit'>
+        </form>
+      </div>
+    </section>
+
+    <section id='request-el'>
+      <div id='motivational-quote'></div>
+      <div id='workout-generated'></div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
