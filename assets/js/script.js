@@ -170,9 +170,9 @@ function getQuote() {
 
 // Changes SRC based on selected workout type
 function displayWorkoutImg() {
-    var category = $("#workout-cat").val();
-    $('#workout-img').attr('src', './assets/images/workout' + category + '.png');
-}; 
+  var category = $("#workout-cat").val();
+  $("#workout-img").attr("src", "./assets/images/workout" + category + ".jpg");
+}
 
 // Event Listeners
 loadSiteBtn.click(showForm);
