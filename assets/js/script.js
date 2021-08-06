@@ -1,13 +1,5 @@
 var loadSiteBtn = $("#load-site-btn");
 var genWorkoutForm = $("#gen-workout");
-var workoutArray = [];
-
-//make sure that any past saved workouts are included in the array
-workoutArray = JSON.parse(localStorage.getItem("workouts"));
-//unless there is nothing saved...
-if (workoutArray === null) {
-  workoutArray = [];
-}
 
 // Shows the form to generate a workout and hides the starting screen and/or the workout screen
 var showForm = function () {
@@ -17,9 +9,10 @@ var showForm = function () {
 };
 
 //saves the current workout
-var saveWorkout = function () {
+var saveWorkout = function (workout) {
   console.log("Saving...");
-  window.localStorage.setItem("workouts", JSON.stringify(workoutArray));
+  var category = $("#workout-cat").val();
+  window.localStorage.setItem(category, JSON.stringify(workout));
 };
 
 function displayWorkout(workout) {
@@ -52,7 +45,7 @@ function displayWorkout(workout) {
   $("#workout-generated").append(saveBtn);
   $("#save-button").click(function () {
     workoutArray.push(workout);
-    saveWorkout();
+    saveWorkout(workout);
   });
 
   //add a cancel button
@@ -173,38 +166,12 @@ function getQuote() {
     });
 }
 
-function displayHistory() {
-  workoutArray.forEach((element) => {
-    var newDiv = $("<ol>");
-    for (let i = 0; i < element.length; i++) {
-      var workoutLi = $("<li>");
-      workoutLi.text(element[i].name + ": ");
-      newDiv.append(workoutLi);
-      newDiv.append(element[i].description);
-    }
-    $("#previous-workouts").append(newDiv);
-  });
-};
-
 // Changes SRC based on selected workout type
 function displayWorkoutImg() {
     var category = $("#workout-cat").val();
     $('#workout-img').attr('src', './assets/images/workout' + category + '.png');
-};
+}; 
 
-displayHistory();
 // Event Listeners
 loadSiteBtn.click(showForm);
 genWorkoutForm.submit(getWorkout);
-
-// adding on modal
-$(".modal-button").click(function () {
-  var target = $(this).data("target");
-  $("html").addClass("is-clipped");
-  $(target).addClass("is-active");
-});
-
-$(".modal-close").click(function () {
-  $("html").removeClass("is-clipped");
-  $(this).parent().removeClass("is-active");
-});
