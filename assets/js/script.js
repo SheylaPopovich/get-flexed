@@ -43,7 +43,6 @@ function displayWorkout(workout) {
   saveBtn.text("Save Workout");
   $("#workout-generated").append(saveBtn);
   $("#save-button").click(function () {
-    workoutArray.push(workout);
     saveWorkout(workout);
   });
 
