@@ -16,168 +16,61 @@
 <body>
   <div class="hero-image" id="start-screen">
     <img id="title" src="../project-1/assets/images/text-font.png">
-      <div class="hero-text">
-        <h1>Bringing inspiration and innovative fitness</h1>
-        <button class="button is-info button is-ghost" id="load-site-btn">Make it Happen</button>
-      </div>
+    <div class="hero-text">
+      <h1>Bringing inspiration and innovative fitness</h1>
+      <button class="button is-info button is-ghost" id="load-site-btn">Make it Happen</button>
+    </div>
   </div>
-  
-
-  
   <section class="hide" id="workout-screen">
     <div class="columns ">
       <div class="column is-two-thirds">
-      <section class="hero is-success is-fullheight" id="column1">
-        <div class="hero-body" >
-          <div class="container">
-            <h1 class="title">Take care of you everyday</h1>
-            <h2 class="subtitle">Get Flexed is a place where the hard part of getting started is done for you all you have to do is put in the work. Discover new exercise routines focusing on areas you want to target. You can now experience a Get Flexed- however, whenever, and wherever you want with the support of encouraging motivational quotes to get you inspired!</h2>
+        <section class="hero is-success is-fullheight" id="column1">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Take care of you everyday</h1>
+              <h2 class="subtitle">Get Flexed is a place where the hard part of getting started is done for you all you
+                have to do is put in the work. Discover new exercise routines focusing on areas you want to target. You
+                can now experience a Get Flexed- however, whenever, and wherever you want with the support of
+                encouraging motivational quotes to get you inspired!</h2>
+            </div>
+          </div>
+      </div>
+      <div class="hero is-fullheight is-black">
+        <a href="past-workouts.html">Track Workouts</a>
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <div class=is-one-quarter>
+              <h3 class="title has-text-white">Let's Make it Happen</h3>
+              <p for="category" class="subtitle has-text-white">Choose Your Workout:</p>
+              <div class="box">
+                <form id="gen-workout">
+                  <label>Over 100+ Workouts</label>
+                  <div class="control">
+                    <div class="select is-info ">
+                      <select name="category" id="workout-cat">
+                        <option value="10">Abs</option>
+                        <option value="8">Arms</option>
+                        <option value="12">Back</option>
+                        <option value="14">Calves</option>
+                        <option value="11">Chest</option>
+                        <option value="9">Legs</option>
+                        <option value="13">Shoulders</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="control">
+                    <button class="button is-info button is-ghost">Submit</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-   
-   <!-- keep this its our form  -->
-     <!-- <div class="column" id="column2">
-      <a href="past-workouts.html">Track Workouts</a>
-      <form id="gen-workout">
-        <label for="category">Choose a workout:</label>
-        <div class="control">
-          <div class="select">
-            <select name="category" id="workout-cat">
-              <option value="10">Abs</option>
-              <option value="8">Arms</option>
-              <option value="12">Back</option>
-              <option value="14">Calves</option>
-              <option value="11">Chest</option>
-              <option value="9">Legs</option>
-              <option value="13">Shoulders</option>
-            </select>
-          </div>
-        </div>
-        <input type="submit" value="submit" />
-      </form>
-    </div>
-</section>  -->
-
-<!-- playing with form input -->
-
-  <div class="hero is-fullheight is-black">
-    <a href="past-workouts.html">Track Workouts</a>
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <div class=is-one-quarter>
-                <h3 class="title has-text-white">Let's Make it Happen</h3>
-                  <p for="category" class="subtitle has-text-white">Choose Your Workout:</p>
-                <div class="box">
-                    <form id="gen-workout">
-                      <label>Over 100+ Workouts</label>
-                      <div class="control">
-                        <div class="select is-info ">
-                          <select name="category" id="workout-cat">
-                            <option value="10">Abs</option>
-                            <option value="8">Arms</option>
-                            <option value="12">Back</option>
-                            <option value="14">Calves</option>
-                            <option value="11">Chest</option>
-                            <option value="9">Legs</option>
-                            <option value="13">Shoulders</option>
-                          </select>
-                        </div>
-                      </div>
-                      <br>
-                      <div class="control">
-                        <button class="button is-info button is-ghost">Submit</button>
-                        <!-- <p> -->
-                          <!-- <a class = "button is-primary modal-button" data-target = "#modal">Launch example modal</a>
-                       </p>
-                       <div id = "modal" class = "modal">
-                         <div class = "modal-background"></div>
-                          <div class = "modal-content">
-                           <div class = "box">
-                              <article class = "media">
-                                <div class = "media-left">
-                                    <figure class = "image is-64x64">
-                                       <img src = "./assets/images/Kettlebell.png" alt="Image">
-                                    </figure>
-                                 </div>
-                                 <div class = "media-content">
-                                    <div class = "content">
-                                       <p>
-                                          <strong>Quote:</strong>
-                                          <section id="request-el">
-                                            <div id="motivational-quote"></div>
-                                            <div id="workout-generated"></div>
-                                            
-                                          </section>
-                                       </p>
-                                  </div>
-                                    
-                                 </div>
-                              </article>
-                           </div>
-                        </div>
-                        <button class = "modal-close is-large" aria-label = "close"></button>
-                     </div>
-                      </div> -->
-                  
-                    </form>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-  </div>
-</section>
-   
-
-
-<!-- added on modal --> 
- <!-- <section class = "section">
-  <div class = "container">
-     <span class = "title">
-        Simple Modal
-     </span>
-     <br>
-     <br>
-     
-     <p>
-        <a class = "button is-primary modal-button" data-target = "#modal">Launch example modal</a>
-     </p>
-     <div id = "modal" class = "modal">
-        <div class = "modal-background"></div>
-        <div class = "modal-content">
-           <div class = "box">
-              <article class = "media">
-                 <div class = "media-left">
-                    <figure class = "image is-64x64">
-                       <img src = "./assets/images/Kettlebell.png" alt="Image">
-                    </figure>
-                 </div>
-                 <div class = "media-content">
-                    <div class = "content">
-                       <p>
-                          <strong>Quote:</strong> 
-                          <div id="motivational-quote"></div>
-                          <div id="workout-generated"></div>
-                          
-                       </p>
-                    </div>
-                    
-                 </div>
-              </article>
-           </div>
-        </div>
-        <button class = "modal-close is-large" aria-label = "close"></button>
-     </div>
-  </div>
-</section>  -->
-
-
-
+  </section>
   <section id="request-el">
     <div id="motivational-quote"></div>
     <div id="workout-generated"></div>
-    
   </section>
 
   <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
