@@ -1,4 +1,3 @@
-console.log("It's Working!!")
 
 //pseudocode
 
@@ -17,8 +16,14 @@ console.log("It's Working!!")
 // the 'previous workouts' page loads a list of previous workouts from local storage
 var loadSiteBtn = $('#load-site-btn');
 var genWorkoutForm = $('#gen-workout');
-var workoutRec = ""
-var workoutObj = []
+var workoutArray = [];
+
+//make sure that any past saved workouts are included in the array
+workoutArray = JSON.parse(localStorage.getItem("workouts"));
+//unless there is nothing saved...
+if (workoutArray === null) {
+    workoutArray = [];
+};
 
 // Shows the form to generate a workout and hides the starting screen and/or the workout screen
 var showForm = function () {
@@ -29,44 +34,64 @@ var showForm = function () {
 };
 
 //saves the current workout
-var saveWorkout = function() {
-  //selects the current 
-  console.log("Saving...");
-
+var saveWorkout = function() { 
+    console.log("Saving...");
+    window.localStorage.setItem("workouts", JSON.stringify(workoutArray));
 
 }
 
 function displayWorkout(workout){
-  console.log(workout)
-  //Shows the generated workout and hides the form to generate a workout
-//   $('#workout-screen').addClass('hide');
-//   $('#request-el').removeClass('hide');
+   //Shows the generated workout and hides the form to generate a workout
+    $('#workout-screen').addClass('hide');
+    $('#request-el').removeClass('hide');
 
   //clears out previous information displayed in the movie card
-  $("#workout-generated").html("");
+    $("#workout-generated").html("");
 
-  //adds the workout title to the generated workout div
-  var title = $("<h2>");
-  title.addClass("workout-title");
-  title.text(workout[0].name);
-  $("#workout-generated").append(title);
+    for (var i = 0; i < workout.length; i++) {
+        //adds the workout title to the generated workout div
+        var title = $("<h3>");
+        title.addClass("workout-title");
+        title.text(workout[i].name);
+        $("#workout-generated").append(title);
 
-  //add the workout description
-  $("#workout-generated").append(workout[0].description);
+        //add the workout description
+        $("#workout-generated").append(workout[i].description);
+    }
 
-  var saveBtn = $("<button>");
-  saveBtn.attr("id", "save-button");
-  saveBtn.text("Save Workout")
-  $("#workout-generated").append(saveBtn);
-  $("#save-button").click(saveWorkout);
+  //add a save button
+    var saveBtn = $("<button>");
+    saveBtn.attr("id", "save-button");
+    saveBtn.text("Save Workout")
+    $("#workout-generated").append(saveBtn);
+    $("#save-button").click(function(){
+        workoutArray.push(workout);
+        saveWorkout();
+    });
 
-  var cancelBtn = $("<button>");
-  cancelBtn.attr("id", "cancel-button");
-  cancelBtn.text("Cancel")
-  $("#workout-generated").append(cancelBtn);
-  $("#cancel-button").click(showForm)
+  //add a cancel button
+    var cancelBtn = $("<button>");
+    cancelBtn.attr("id", "cancel-button");
+    cancelBtn.text("Go Back");
+    $("#workout-generated").append(cancelBtn);
+    $("#cancel-button").click(showForm);
 
-}
+};
+
+// Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
+function shuffleWorkouts (workouts) {
+    var currentIndex = workouts.length, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+    
+        [workouts[currentIndex], workouts[randomIndex]] = [
+          workouts[randomIndex], workouts[currentIndex]];
+        }
+    workouts.splice(3);
+    // TODO: call function to display with workouts param
+    displayWorkout(workouts)
+};
 
 // Fetches to wger for the selected workout category to grab the ID that the API associates with each workout category
 var getWorkout = function (event) {
@@ -93,15 +118,23 @@ var getWorkout = function (event) {
     })
 };
 
-// Gets a list of quotes from an API
-function getQuote () {
-    fetch("https://type.fit/api/quotes")
-    .then(response => {
-        return response.json()
-    }).then(data => {
-        shuffleQuotes(data);
-    });
-};
+//displays the quote and author to the page
+var displayQuote = function(quote){
+
+    $("#motivational-quote").html("")
+
+    var wiseWords = quote[0].text;
+    var authoredBy = quote[0].author;
+
+    var quoteEl = $("<h2>")
+    quoteEl.text(wiseWords)
+    $("#motivational-quote").append(quoteEl)
+
+    var authorEl = $("<p>")
+    authorEl.text("by " + authoredBy)
+    $("#motivational-quote").append(authorEl)
+
+}
 
 // Shuffles the quotes from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
 function shuffleQuotes (quote) {
@@ -114,26 +147,35 @@ function shuffleQuotes (quote) {
           quote[randomIndex], quote[currentIndex]];
         }
     quote.splice(1);
-    console.log(quote);
     // TODO: call function to display with quote param
+    displayQuote(quote)
 };
 
-// Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
-function shuffleWorkouts (workouts) {
-    var currentIndex = workouts.length, randomIndex;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-    
-        [workouts[currentIndex], workouts[randomIndex]] = [
-          workouts[randomIndex], workouts[currentIndex]];
+// Gets a list of quotes from an API
+function getQuote () {
+    fetch("https://type.fit/api/quotes")
+    .then(response => {
+        return response.json()
+    }).then(data => {
+        shuffleQuotes(data);
+    });
+};
+
+
+function displayHistory() {
+    workoutArray.forEach(element => {
+        var newDiv = $("<ol>")
+        for (let i = 0; i < element.length; i++) {
+            var workoutLi = $("<li>")
+            workoutLi.text(element[i].name + ": ")
+            newDiv.append(workoutLi)
+            newDiv.append(element[i].description)
         }
-    workouts.splice(3);
-    console.log(workouts);
-    // TODO: call function to display with workouts param
-    displayWorkout(workouts)
-};
+        $("#previous-workouts").append(newDiv)
+    });
+}
 
+displayHistory()
 // Event Listeners
 loadSiteBtn.click(showForm);
 genWorkoutForm.submit(getWorkout);
