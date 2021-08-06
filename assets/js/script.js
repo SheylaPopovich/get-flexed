@@ -27,6 +27,7 @@ function displayWorkout(workout) {
   $("#workout-screen").addClass("hide");
   $("#request-el").removeClass("hide");
 
+
   //clears out previous information displayed in the movie card
   $("#workout-generated").html("");
 
@@ -60,6 +61,8 @@ function displayWorkout(workout) {
   cancelBtn.text("Go Back");
   $("#workout-generated").append(cancelBtn);
   $("#cancel-button").click(showForm);
+
+  displayWorkoutImg();
 }
 
 // Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
@@ -145,6 +148,20 @@ function shuffleQuotes(quote) {
   displayQuote(quote);
 }
 
+// Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
+function shuffleWorkouts (workouts) {
+    var currentIndex = workouts.length, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+    
+        [workouts[currentIndex], workouts[randomIndex]] = [
+          workouts[randomIndex], workouts[currentIndex]];
+        }
+    workouts.splice(3);
+    displayWorkout(workouts);
+};
+
 // Gets a list of quotes from an API
 function getQuote() {
   fetch("https://type.fit/api/quotes")
@@ -167,7 +184,13 @@ function displayHistory() {
     }
     $("#previous-workouts").append(newDiv);
   });
-}
+};
+
+// Changes SRC based on selected workout type
+function displayWorkoutImg() {
+    var category = $("#workout-cat").val();
+    $('#workout-img').attr('src', './assets/images/workout' + category + '.png');
+};
 
 displayHistory();
 // Event Listeners
