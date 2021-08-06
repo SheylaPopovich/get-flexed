@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./assets/css/past-workouts.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/fonts/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/fonts/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/fonts/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/past-workouts.css" />
 
-    <title>Inspirational Workout</title>
-  </head>
-  <body>
+  <title>Inspirational Workout</title>
+</head>
+
+<body>
+  <div class="hero-image2">
     <header>
       <p><a href="index.html">Go Back...</a></p>
     </header>
@@ -30,15 +37,16 @@
       </div>
       <br>
       <div class="control">
-      <button class="button is-info button is-ghost">Submit</button>
+        <button class="button is-info button is-ghost">Submit</button>
     </form>
 
     <div>
       <h2>Previous Workouts</h2>
       <div id="previous-workouts"></div>
     </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+  <script src="./assets/js/past-workout.js"></script>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
-    <script src="./assets/js/past-workout.js"></script>
-  </body>
 </html>

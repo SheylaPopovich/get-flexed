@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Orbitron
+- Font Author: Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron)
+- Font Source: http://fonts.gstatic.com/s/orbitron/v17/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6xpmIyXjU1pg.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
