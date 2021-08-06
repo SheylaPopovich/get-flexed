@@ -49,14 +49,17 @@ function displayWorkout(workout){
     $("#workout-generated").html("");
 
     for (var i = 0; i < workout.length; i++) {
+        var workoutDiv = $("<div>")
+        $("#workout-generated").append(workoutDiv);
+
         //adds the workout title to the generated workout div
         var title = $("<h3>");
         title.addClass("workout-title");
         title.text(workout[i].name);
-        $("#workout-generated").append(title);
+        workoutDiv.append(title)
 
         //add the workout description
-        $("#workout-generated").append(workout[i].description);
+        workoutDiv.append(workout[i].description);
     }
 
   //add a save button
