@@ -39,8 +39,8 @@ var saveWorkout = function() {
 function displayWorkout(workout){
   console.log(workout)
   //Shows the generated workout and hides the form to generate a workout
-  $('#workout-screen').addClass('hide');
-  $('#request-el').removeClass('hide');
+//   $('#workout-screen').addClass('hide');
+//   $('#request-el').removeClass('hide');
 
   //clears out previous information displayed in the movie card
   $("#workout-generated").html("");
