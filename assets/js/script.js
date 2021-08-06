@@ -20,7 +20,6 @@ function displayWorkout(workout) {
   $("#workout-screen").addClass("hide");
   $("#request-el").removeClass("hide");
 
-
   //clears out previous information displayed in the movie card
   $("#workout-generated").html("");
 
@@ -72,7 +71,7 @@ function shuffleWorkouts(workouts) {
     ];
   }
   workouts.splice(3);
-  // TODO: call function to display with workouts param
+  // call function to display with workouts param
   displayWorkout(workouts);
 }
 
@@ -137,23 +136,26 @@ function shuffleQuotes(quote) {
     ];
   }
   quote.splice(1);
-  // TODO: call function to display with quote param
+  // call function to display with quote param
   displayQuote(quote);
 }
 
 // Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
-function shuffleWorkouts (workouts) {
-    var currentIndex = workouts.length, randomIndex;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-    
-        [workouts[currentIndex], workouts[randomIndex]] = [
-          workouts[randomIndex], workouts[currentIndex]];
-        }
-    workouts.splice(3);
-    displayWorkout(workouts);
-};
+function shuffleWorkouts(workouts) {
+  var currentIndex = workouts.length,
+    randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [workouts[currentIndex], workouts[randomIndex]] = [
+      workouts[randomIndex],
+      workouts[currentIndex],
+    ];
+  }
+  workouts.splice(3);
+  displayWorkout(workouts);
+}
 
 // Gets a list of quotes from an API
 function getQuote() {
