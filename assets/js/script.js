@@ -39,8 +39,8 @@ var saveWorkout = function() {
 function displayWorkout(workout){
   console.log(workout)
   //Shows the generated workout and hides the form to generate a workout
-  $('#workout-screen').addClass('hide');
-  $('#request-el').removeClass('hide');
+//$('#workout-screen').addClass('hide');
+//$('#request-el').removeClass('hide');
 
   //clears out previous information displayed in the movie card
   $("#workout-generated").html("");
@@ -129,18 +129,14 @@ function shuffleWorkouts (workouts) {
           workouts[randomIndex], workouts[currentIndex]];
         }
     workouts.splice(3);
-    console.log(workouts);
-    // TODO: call function to display with workouts param
-    displayWorkout(workouts)
+    displayWorkout(workouts);
 };
 
 // Event Listeners
 loadSiteBtn.click(showForm);
 genWorkoutForm.submit(getWorkout);
 
-
-
-// adding on modal
+// Adding on modal
 $(".modal-button").click(function() {
     var target = $(this).data("target");
     $("html").addClass("is-clipped");
