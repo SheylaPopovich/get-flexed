@@ -4,7 +4,7 @@ html {
   height: 100%;
   margin: 0;
   overflow-y: auto;
-  overflow-x: auto;
+  overflow-x: hidden;
   color: white;
   width: 100vw;
 }
@@ -57,14 +57,17 @@ a {
 }
 
 #hero-text1 {
-  font-family: "Alfa Slab One", cursive;
-  padding-left: 20%;
+  font-family: "Bitter", serif;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
   margin-top: 2%;
+  font-size: 1.7rem;
 }
 
 #hero-text2 {
   font-family: "Bitter", serif;
-  padding-left: 65%;
+  padding-left: 50%;
 }
 
 #title {
@@ -76,14 +79,14 @@ a {
 }
 
 .work-out {
-  padding-left: 6%;
-  padding-right: 6%;
+  padding-left: 7%;
+  padding-right: 7%;
   padding-top: 5%;
   padding-bottom: 5%;
   margin-left: 8%;
   margin-right: 8%;
   margin-top: 5%;
-  border-radius: 10%;
+  border-radius: 20%;
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
@@ -94,10 +97,6 @@ a {
 
 .work-out:hover {
   color: #52bff2;
-}
-
-#workout-generated {
-  margin-left: 40%;
 }
 
 .column {
@@ -111,3 +110,10 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+#button-div {
+  margin-left: 40%;
+  margin-bottom: 10%;
+}
+

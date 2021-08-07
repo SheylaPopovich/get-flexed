@@ -183,10 +183,6 @@ function displayWorkoutImg() {
   $(".hero-image1").css({
     "background-image": 'url("./assets/images/workout' + category + '.jpg"',
   });
-  // $(".hero-image1").attr(
-  //   "style",
-  //   'background-image: url("../images/workout"' + category + '".jpg");'
-  // );
 }
 
 // Event Listeners
