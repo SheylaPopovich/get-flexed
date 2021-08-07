@@ -24,8 +24,13 @@ function displayWorkout(workout) {
   $("#workout-generated").html("");
 
   for (var i = 0; i < workout.length; i++) {
+    var columnDiv = $("<div>");
+    columnDiv.addClass("column is-one-third");
+    $("#workout-generated").append(columnDiv);
+
     var workoutDiv = $("<div>");
-    $("#workout-generated").append(workoutDiv);
+    workoutDiv.addClass("work-out");
+    columnDiv.append(workoutDiv);
 
     //adds the workout title to the generated workout div
     var title = $("<h3>");
@@ -37,23 +42,28 @@ function displayWorkout(workout) {
     workoutDiv.append(workout[i].description);
   }
 
+  var buttonDiv = $("<div>");
+  $("#request-el").append(buttonDiv);
+
   //add a save button
   var saveBtn = $("<button>");
+  saveBtn.addClass("button is-info button is-ghost");
   saveBtn.attr("id", "save-button");
   saveBtn.text("Save Workout");
-  $("#workout-generated").append(saveBtn);
+  buttonDiv.append(saveBtn);
   $("#save-button").click(function () {
     saveWorkout(workout);
   });
 
   //add a cancel button
   var cancelBtn = $("<button>");
+  cancelBtn.addClass("button is-info button is-ghost");
   cancelBtn.attr("id", "cancel-button");
   cancelBtn.text("Go Back");
-  $("#workout-generated").append(cancelBtn);
+  buttonDiv.append(cancelBtn);
   $("#cancel-button").click(showForm);
 
-  displayWorkoutImg();
+  // displayWorkoutImg();
 }
 
 // Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
@@ -113,10 +123,12 @@ var displayQuote = function (quote) {
   $("#motivational-quote").append(quoteDiv);
 
   var quoteEl = $("<h2>");
+  quoteEl.attr("id", "hero-text1");
   quoteEl.text(wiseWords);
   quoteDiv.append(quoteEl);
 
   var authorEl = $("<p>");
+  authorEl.attr("id", "hero-text2");
   authorEl.text("by " + authoredBy);
   quoteDiv.append(authorEl);
 };
@@ -168,10 +180,19 @@ function getQuote() {
 }
 
 // Changes SRC based on selected workout type
-function displayWorkoutImg() {
-  var category = $("#workout-cat").val();
-  $("#workout-img").attr("src", "./assets/images/workout" + category + ".jpg");
-}
+// function displayWorkoutImg() {
+//   var category = $("#workout-cat").val();
+//   // $(".hero-image1").css({
+//   //   "background-image":
+//   //     'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/workout"' +
+//   //     category +
+//   //     '".jpg"',
+//   // });
+//   $(".hero-image1").attr(
+//     "style",
+//     'background-image:url("../images/workout"' + category + '".jpg");'
+//   );
+// }
 
 // Event Listeners
 loadSiteBtn.click(showForm);
