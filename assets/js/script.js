@@ -186,10 +186,6 @@ function displayWorkoutImg() {
       category +
       '.jpg"',
   });
-  // $(".hero-image1").attr(
-  //   "style",
-  //   'background-image: url("../images/workout"' + category + '".jpg");'
-  // );
 }
 
 // Event Listeners
