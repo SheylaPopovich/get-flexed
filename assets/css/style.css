@@ -1,63 +1,124 @@
-body, html {
-    background-color: #0A0A0A;
-    height: 100%;
-    margin: 0;
-    overflow-y : auto;
-    overflow-x: hidden;
+body,
+html {
+  background-color: #0a0a0a;
+  height: 100%;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: auto;
+  color: white;
+  width: 100vw;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
-
 a {
-    font-family: 'Bitter', serif;
-    margin-left: 82%;
-    color: white;
-    font-size: 1rem;
+  font-family: "Bitter", serif;
+  margin-left: 82%;
+  color: white;
+  font-size: 1rem;
 }
 
 .hero-image {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pullup.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 100%;
-    
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/pullup.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+}
+
+.hero-image1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/workout13.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+}
+
+.hero-image2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assest/images/men-sled.jfif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
 }
 
 .hero-text {
-    text-align: center;
-    color: white;
-    line-height: 60px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:bolder;
-    
-  
+  text-align: center;
+  color: white;
+  line-height: 60px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+}
+
+#hero-text1 {
+  font-family: "Alfa Slab One", cursive;
+  padding-left: 20%;
+  margin-top: 2%;
+}
+
+#hero-text2 {
+  font-family: "Bitter", serif;
+  padding-left: 65%;
 }
 
 #title {
- padding-left: 17%;
- padding-top: 12%;
- 
+  padding-left: 17%;
+  padding-top: 12%;
+}
+.workout-title {
+  font-family: "Alfa Slab One", cursive;
+  /* padding-left: 10%;
+    padding-right: 10%; */
 }
 
+/* .description { */
+/* font-family: 'Bitter', serif; */
+/* padding-left: 10%;
+    padding-right: 10%; */
+/* } */
 
+.work-out {
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 5%;
+  border-radius: 10%;
+  /* background: #000000; 
+    background: -webkit-linear-gradient(to right, #434343, #000000);  
+    background: linear-gradient(to right, #434343, #000000);  */
 
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+  mix-blend-mode: hard-light;
 
+  transition: all 0.2s linear;
+}
+.work-out:hover {
+  color: #52bff2;
+}
+
+#workout-generated {
+  margin-left: 40%;
+}
 .column {
-    padding: 0%;
-    
-  
+  padding: 0%;
 }
 #column1 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/woman-weights.jfif");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-   
-    
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/woman-weights.jfif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
