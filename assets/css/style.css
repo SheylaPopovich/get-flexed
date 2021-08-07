@@ -31,14 +31,12 @@ a {
 }
 
 .hero-image1 {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images/workout13.jpg"); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   height: 100%;
-
 }
 
 .hero-image2 {
@@ -117,11 +115,9 @@ a {
   /* margin-left: 40%; */
 }
 
-
 .column {
   padding: 0%;
 }
-
 
 #column1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -131,8 +127,6 @@ a {
   background-size: cover;
 }
 
-
 #button-div {
   margin-left: 40%;
 }
-

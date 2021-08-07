@@ -181,7 +181,10 @@ function getQuote() {
 function displayWorkoutImg() {
   var category = $("#workout-cat").val();
   $(".hero-image1").css({
-    "background-image": 'url("./assets/images/workout' + category + '.jpg"',
+    "background-image":
+      'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/images/workout' +
+      category +
+      '.jpg"',
   });
   // $(".hero-image1").attr(
   //   "style",
