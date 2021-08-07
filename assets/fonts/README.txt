@@ -1,36 +1,36 @@
-Raleway Variable Font
-=====================
+Bitter Variable Font
+====================
 
-This download contains Raleway as both variable fonts and static fonts.
+This download contains Bitter as both variable fonts and static fonts.
 
-Raleway is a variable font with this axis:
+Bitter is a variable font with this axis:
   wght
 
 This means all the styles are contained in these files:
-  Raleway-VariableFont_wght.ttf
-  Raleway-Italic-VariableFont_wght.ttf
+  Bitter-VariableFont_wght.ttf
+  Bitter-Italic-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Raleway:
-  static/Raleway-Thin.ttf
-  static/Raleway-ExtraLight.ttf
-  static/Raleway-Light.ttf
-  static/Raleway-Regular.ttf
-  static/Raleway-Medium.ttf
-  static/Raleway-SemiBold.ttf
-  static/Raleway-Bold.ttf
-  static/Raleway-ExtraBold.ttf
-  static/Raleway-Black.ttf
-  static/Raleway-ThinItalic.ttf
-  static/Raleway-ExtraLightItalic.ttf
-  static/Raleway-LightItalic.ttf
-  static/Raleway-Italic.ttf
-  static/Raleway-MediumItalic.ttf
-  static/Raleway-SemiBoldItalic.ttf
-  static/Raleway-BoldItalic.ttf
-  static/Raleway-ExtraBoldItalic.ttf
-  static/Raleway-BlackItalic.ttf
+in those cases you can use the static font files for Bitter:
+  static/Bitter-Thin.ttf
+  static/Bitter-ExtraLight.ttf
+  static/Bitter-Light.ttf
+  static/Bitter-Regular.ttf
+  static/Bitter-Medium.ttf
+  static/Bitter-SemiBold.ttf
+  static/Bitter-Bold.ttf
+  static/Bitter-ExtraBold.ttf
+  static/Bitter-Black.ttf
+  static/Bitter-ThinItalic.ttf
+  static/Bitter-ExtraLightItalic.ttf
+  static/Bitter-LightItalic.ttf
+  static/Bitter-Italic.ttf
+  static/Bitter-MediumItalic.ttf
+  static/Bitter-SemiBoldItalic.ttf
+  static/Bitter-BoldItalic.ttf
+  static/Bitter-ExtraBoldItalic.ttf
+  static/Bitter-BlackItalic.ttf
 
 Get started
 -----------
