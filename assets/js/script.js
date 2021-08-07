@@ -22,6 +22,7 @@ function displayWorkout(workout) {
 
   //clears out previous information displayed in the movie card
   $("#workout-generated").html("");
+  $("#button-div").html("");
 
   for (var i = 0; i < workout.length; i++) {
     var columnDiv = $("<div>");
@@ -42,15 +43,12 @@ function displayWorkout(workout) {
     workoutDiv.append(workout[i].description);
   }
 
-  var buttonDiv = $("<div>");
-  $("#request-el").append(buttonDiv);
-
   //add a save button
   var saveBtn = $("<button>");
   saveBtn.addClass("button is-info button is-ghost");
   saveBtn.attr("id", "save-button");
   saveBtn.text("Save Workout");
-  buttonDiv.append(saveBtn);
+  $("#button-div").append(saveBtn);
   $("#save-button").click(function () {
     saveWorkout(workout);
   });
@@ -60,10 +58,10 @@ function displayWorkout(workout) {
   cancelBtn.addClass("button is-info button is-ghost");
   cancelBtn.attr("id", "cancel-button");
   cancelBtn.text("Go Back");
-  buttonDiv.append(cancelBtn);
+  $("#button-div").append(cancelBtn);
   $("#cancel-button").click(showForm);
 
-  // displayWorkoutImg();
+  displayWorkoutImg();
 }
 
 // Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
@@ -180,19 +178,16 @@ function getQuote() {
 }
 
 // Changes SRC based on selected workout type
-// function displayWorkoutImg() {
-//   var category = $("#workout-cat").val();
-//   // $(".hero-image1").css({
-//   //   "background-image":
-//   //     'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/workout"' +
-//   //     category +
-//   //     '".jpg"',
-//   // });
-//   $(".hero-image1").attr(
-//     "style",
-//     'background-image:url("../images/workout"' + category + '".jpg");'
-//   );
-// }
+function displayWorkoutImg() {
+  var category = $("#workout-cat").val();
+  $(".hero-image1").css({
+    "background-image": 'url("./assets/images/workout' + category + '.jpg"',
+  });
+  // $(".hero-image1").attr(
+  //   "style",
+  //   'background-image: url("../images/workout"' + category + '".jpg");'
+  // );
+}
 
 // Event Listeners
 loadSiteBtn.click(showForm);
