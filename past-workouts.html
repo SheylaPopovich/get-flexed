@@ -12,27 +12,35 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/past-workouts.css" />
 
-  <title>Inspirational Workout</title>
+  <title>Get Flexed</title>
 </head>
 
 <body>
   <div>
-    <h2>Previous Workouts</h2>
-    <div id="previous-workouts"></div>
-  </div>
-  <a href="index.html">Home</a>
 
-    <div class= "columns">
-      <div class="column">
-        testing One
-        <section class="hero is-success">
+    
+    <a href="index.html">Home</a>
+ 
 
-        </section>
-      </div>
-      <div class="column is-two-thirds">
-        testing two<form id="gen-workout">
+
+
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <section class="hero is-success is-fullheight" id="column2">
+        <div id="previous-workouts"></div>
+    </div>
+
+    <div class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+      <div class="column ">
+        <h3>Previous Workouts</h3>
+        <p for="category" class="subtitle has-text-white">Choose Your Workout:</p>
+        <div class="box">
+        <form id="gen-workout">
+          <label>See Saved Workout</label>
           <div class="control">
-            <div class="select is-info ">
+            <div class="select is-rounded is-link ">
               <select name="category" id="workout-cat">
                 <option value="10">Abs</option>
                 <option value="8">Arms</option>
@@ -48,23 +56,30 @@
           <div class="control">
             <button class="button is-info button is-ghost">Submit</button>
         </form>
-    
+      </div>
       </div>
     </div>
-
-
-
-
-
-
-
-
     
-   
-  <!-- </div> -->
-  
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
-  <script src="./assets/js/past-workout.js"></script>
+    </div>
+  </div>
+  </div>
+</div>
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+    <script src="./assets/js/past-workout.js"></script>
 </body>
 
 </html>
