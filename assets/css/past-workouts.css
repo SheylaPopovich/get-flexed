@@ -70,19 +70,34 @@ h3 {
 }
 
 #previous-workouts {
-    padding-left: 7%;
-    padding-right: 7%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-top: 5%;
-    
-    background: #232526;
-    background: -webkit-linear-gradient(to right, #414345, #232526);
-    background: linear-gradient(to right, #414345, #232526);
-    mix-blend-mode: hard-light;
-  
-    transition: all 0.2s linear;   
-    
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 5%;
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+  mix-blend-mode: hard-light;
+  transition: all 0.2s linear;
+}
+
+li {
+  font-family: "Alfa Slab One", cursive;
+  color: rgb(0, 4, 255);
+  border-bottom: solid white;
+  font-size: 1.4rem;
+}
+
+ul {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+  mix-blend-mode: hard-light;
+}
+
+p {
+  padding-bottom: 10%;
 }
