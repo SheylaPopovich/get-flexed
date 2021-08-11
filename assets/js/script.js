@@ -133,20 +133,17 @@ function shuffleQuotes(quote) {
   displayQuote(quote);
 }
 
+// Removes any workouts with a name or description that come back as null
 function workoutFilter(workouts) {
-  console.log(workouts);
-
-  workouts.forEach(element => {
+  for (let i = 0; i < workouts.length; i++) {
+    const element = workouts[i];
     if (element.name === null) {
-      element.splice(1);
-      return;
+      workouts.splice(i, 1);
+    } else if (element.description === "") {
+      workouts.splice(i, 1);
     };
+  };
 
-    if (element.description === null || "") {
-      element.splice(1);
-      return;
-    };
-  });
   shuffleWorkouts(workouts);
 }
 
@@ -154,7 +151,6 @@ function workoutFilter(workouts) {
 function shuffleWorkouts(workouts) {
   var currentIndex = workouts.length;
   var randomIndex;
-  console.log(workouts);
 
   // Randomly chooses 3 workouts from workouts array
   while (0 !== currentIndex) {
