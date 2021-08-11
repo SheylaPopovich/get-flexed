@@ -8,13 +8,13 @@
 <a href="#photo-credits">Credits</a> |
 <a href="#badges">Badges</a> |
 <a href="#installation">Installation</a> |
-<a href="#license">License</a> |
+<a href="#license">License</a>
 </p>
 <br>
 
 ## **Description**
 
-Get Flexed is an ap that helps you select a workout routine for the day. We wanted to design a workout app that allows the user to select the type of workout they desire that recommends a workout matching their criteria and then inspires them with an inspirational quote.
+Get Flexed is an app that helps you select a workout routine for the day. We wanted to design a workout app that allows the user to select the type of workout they desire that recommends a workout matching their criteria and then inspires them with an inspirational quote.
 <br>
 <br>
 
@@ -84,7 +84,7 @@ Image by <a href="https://pixabay.com/users/kinkate-4384506/?utm_source=link-att
 
 ## **Installation**
 
-This is a web-based ap. No installation is required.
+This is a web-based app. No installation is required.
 <br>
 <br>
 
