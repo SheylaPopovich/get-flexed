@@ -12,14 +12,14 @@ var getWorkout = function () {
 function displayHistory(workoutArray) {
   $("#previous-workouts").empty();
 
-  var newDiv = $("<ol>");
+  var newDiv = $("<div>");
   for (let i = 0; i < workoutArray.length; i++) {
-    var workoutLi = $("<li>");
-    workoutLi.text(workoutArray[i].name + ": ");
-    newDiv.append(workoutLi);
+    var workoutTitle = $("<h3>");
+    workoutTitle.text(workoutArray[i].name + ": ");
+    newDiv.append(workoutTitle);
     newDiv.append(workoutArray[i].description);
-  };
-  
+  }
+
   $("#previous-workouts").append(newDiv);
 }
 
