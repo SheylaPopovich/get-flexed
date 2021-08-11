@@ -18,8 +18,8 @@ function displayHistory(workoutArray) {
     workoutTitle.text(workoutArray[i].name + ": ");
     newDiv.append(workoutTitle);
     newDiv.append(workoutArray[i].description);
-  };
-  
+  }
+
   $("#previous-workouts").append(newDiv);
 }
 
