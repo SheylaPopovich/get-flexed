@@ -84,7 +84,7 @@ var getWorkout = function (event) {
       if (data.staus === 404) {
         console.log("Error");
       } else {
-        shuffleWorkouts(data.results);
+        workoutFilter(data.results);
       }
     });
 };
@@ -128,10 +128,30 @@ function shuffleQuotes(quote) {
   displayQuote(quote);
 };
 
+function workoutFilter(workouts) {
+  console.log(workouts);
+
+  workouts.forEach(element => {
+    if (element.name === null) {
+      element.splice(1);
+      return;
+    };
+
+    if (element.description === null || "") {
+      element.splice(1);
+      return;
+    };
+  });
+  shuffleWorkouts(workouts);
+}
+
 // Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
 function shuffleWorkouts(workouts) {
-  var currentIndex = workouts.length,
-    randomIndex;
+  var currentIndex = workouts.length;
+  var randomIndex;
+  console.log(workouts);
+
+  // Randomly chooses 3 workouts from workouts array
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
