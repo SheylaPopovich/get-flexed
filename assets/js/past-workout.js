@@ -1,4 +1,4 @@
-// Gets array from local storage and calls for it to be displayed
+// Gets array from local storage calls a function that displays the data
 var getWorkout = function () {
   event.preventDefault();
 
@@ -10,7 +10,7 @@ var getWorkout = function () {
 
 // Display the array that is grabbed from local storage
 function displayHistory(workoutArray) {
-    $("#previous-workouts").empty();
+  $("#previous-workouts").empty();
 
   var newDiv = $("<ol>");
   for (let i = 0; i < workoutArray.length; i++) {
@@ -18,7 +18,8 @@ function displayHistory(workoutArray) {
     workoutLi.text(workoutArray[i].name + ": ");
     newDiv.append(workoutLi);
     newDiv.append(workoutArray[i].description);
-  }
+  };
+  
   $("#previous-workouts").append(newDiv);
 }
 

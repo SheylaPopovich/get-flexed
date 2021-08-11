@@ -1,6 +1,3 @@
-var loadSiteBtn = $("#load-site-btn");
-var genWorkoutForm = $("#gen-workout");
-
 // Shows the form to generate a workout and hides the starting screen and/or the workout screen
 var showForm = function () {
   $("#start-screen").addClass("hide");
@@ -8,13 +5,13 @@ var showForm = function () {
   $("#request-el").addClass("hide");
 };
 
-//saves the current workout
+// Saves the current workout to local storage
 var saveWorkout = function (workout) {
-  console.log("Saving...");
   var category = $("#workout-cat").val();
   window.localStorage.setItem(category, JSON.stringify(workout));
 };
 
+// Displays workout that is fetched from wger API
 function displayWorkout(workout) {
   //Shows the generated workout and hides the form to generate a workout
   $("#workout-screen").addClass("hide");
@@ -62,25 +59,7 @@ function displayWorkout(workout) {
   $("#cancel-button").click(showForm);
 
   displayWorkoutImg();
-}
-
-// Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
-function shuffleWorkouts(workouts) {
-  var currentIndex = workouts.length,
-    randomIndex;
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [workouts[currentIndex], workouts[randomIndex]] = [
-      workouts[randomIndex],
-      workouts[currentIndex],
-    ];
-  }
-  workouts.splice(3);
-  // call function to display with workouts param
-  displayWorkout(workouts);
-}
+};
 
 // Fetches to wger for the selected workout category to grab the ID that the API associates with each workout category
 var getWorkout = function (event) {
@@ -110,7 +89,7 @@ var getWorkout = function (event) {
     });
 };
 
-//displays the quote and author to the page
+// Displays the quote and author to the page
 var displayQuote = function (quote) {
   $("#motivational-quote").html("");
 
@@ -131,7 +110,7 @@ var displayQuote = function (quote) {
   quoteDiv.append(authorEl);
 };
 
-// Shuffles the quotes from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
+// Shuffles the quotes from the API using a Knuth Shuffle and splices it down to just one to be used
 function shuffleQuotes(quote) {
   var currentIndex = quote.length,
     randomIndex;
@@ -145,9 +124,9 @@ function shuffleQuotes(quote) {
     ];
   }
   quote.splice(1);
-  // call function to display with quote param
+
   displayQuote(quote);
-}
+};
 
 // Shuffles the workouts from the API using a Knuth Shuffle and splices it down to a list of 3 to be used
 function shuffleWorkouts(workouts) {
@@ -163,10 +142,11 @@ function shuffleWorkouts(workouts) {
     ];
   }
   workouts.splice(3);
-  displayWorkout(workouts);
-}
 
-// Gets a list of quotes from an API
+  displayWorkout(workouts);
+};
+
+// Gets a list of quotes from type fit API
 function getQuote() {
   fetch("https://type.fit/api/quotes")
     .then((response) => {
@@ -175,9 +155,9 @@ function getQuote() {
     .then((data) => {
       shuffleQuotes(data);
     });
-}
+};
 
-// Changes SRC based on selected workout type
+// Changes SRC based on selected workout type to display the hero image
 function displayWorkoutImg() {
   var category = $("#workout-cat").val();
   $(".hero-image1").css({
@@ -186,8 +166,8 @@ function displayWorkoutImg() {
       category +
       '.jpg"',
   });
-}
+};
 
 // Event Listeners
-loadSiteBtn.click(showForm);
-genWorkoutForm.submit(getWorkout);
+$("#load-site-btn").click(showForm);
+$("#gen-workout").submit(getWorkout);
