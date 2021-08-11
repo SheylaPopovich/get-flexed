@@ -48,7 +48,7 @@ A special thank you to Daniel Kaltenbaugh, and TA Taani Maama.
 ![jQuery](https://img.shields.io/static/v1?style=for-the-badge&message=jQuery&color=0769AD&logo=jQuery&logoColor=FFFFFF&label=)
 ![Bulma](https://img.shields.io/static/v1?style=for-the-badge&message=Bulma&color=222222&logo=Bulma&logoColor=00D1B2&label=)
 
-Inspirational quotes provided by [Inspiration](https://inspiration.goprogram.ai/docs/)
+Inspirational quotes provided by [Type Fit](https://type.fit/api/quotes)
 <br>
 Workouts provided by [Wger](https://wger.de/en/software/api)
 <br>
