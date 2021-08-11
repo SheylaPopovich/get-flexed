@@ -86,12 +86,15 @@ h3 {
 
 li {
   font-family: "Alfa Slab One", cursive;
-  color: rgb(0, 4, 255);
+  color: white;
   border-bottom: solid white;
   font-size: 1.4rem;
+ 
 }
 
-ul {
+ul, ol {
+  list-style: none;
+  color: white;
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
@@ -101,3 +104,5 @@ ul {
 p {
   padding-bottom: 10%;
 }
+
+
