@@ -98,7 +98,7 @@ var displayQuote = function (quote) {
   if (quote[0].author) {
     var authoredBy = quote[0].author;
   } else {
-    authoredBy = "";
+    authoredBy = "unknown author";
   }
 
   var quoteDiv = $("<div>");
