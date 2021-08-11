@@ -59,7 +59,7 @@ function displayWorkout(workout) {
   $("#cancel-button").click(showForm);
 
   displayWorkoutImg();
-};
+}
 
 // Fetches to wger for the selected workout category to grab the ID that the API associates with each workout category
 var getWorkout = function (event) {
@@ -94,7 +94,12 @@ var displayQuote = function (quote) {
   $("#motivational-quote").html("");
 
   var wiseWords = quote[0].text;
-  var authoredBy = quote[0].author;
+
+  if (quote[0].author) {
+    var authoredBy = quote[0].author;
+  } else {
+    authoredBy = "";
+  }
 
   var quoteDiv = $("<div>");
   $("#motivational-quote").append(quoteDiv);
@@ -126,22 +131,19 @@ function shuffleQuotes(quote) {
   quote.splice(1);
 
   displayQuote(quote);
-};
+}
 
+// Removes any workouts with a name or description that come back as null
 function workoutFilter(workouts) {
-  console.log(workouts);
-
-  workouts.forEach(element => {
+  for (let i = 0; i < workouts.length; i++) {
+    const element = workouts[i];
     if (element.name === null) {
-      element.splice(1);
-      return;
+      workouts.splice(i, 1);
+    } else if (element.description === "") {
+      workouts.splice(i, 1);
     };
+  };
 
-    if (element.description === null || "") {
-      element.splice(1);
-      return;
-    };
-  });
   shuffleWorkouts(workouts);
 }
 
@@ -149,7 +151,6 @@ function workoutFilter(workouts) {
 function shuffleWorkouts(workouts) {
   var currentIndex = workouts.length;
   var randomIndex;
-  console.log(workouts);
 
   // Randomly chooses 3 workouts from workouts array
   while (0 !== currentIndex) {
@@ -164,7 +165,7 @@ function shuffleWorkouts(workouts) {
   workouts.splice(3);
 
   displayWorkout(workouts);
-};
+}
 
 // Gets a list of quotes from type fit API
 function getQuote() {
@@ -175,7 +176,7 @@ function getQuote() {
     .then((data) => {
       shuffleQuotes(data);
     });
-};
+}
 
 // Changes SRC based on selected workout type to display the hero image
 function displayWorkoutImg() {
@@ -186,7 +187,7 @@ function displayWorkoutImg() {
       category +
       '.jpg"',
   });
-};
+}
 
 // Event Listeners
 $("#load-site-btn").click(showForm);
