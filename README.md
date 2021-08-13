@@ -79,6 +79,7 @@ Image by <a href="https://pixabay.com/users/kinkate-4384506/?utm_source=link-att
 [![Bulma](https://img.shields.io/badge/Bulma-30%-aqua.svg)](https://bulma.io/)
 [![jQuery](https://img.shields.io/badge/jQuery-30%-blue.svg)](https://api.jquery.com/)
 
+
 <br>
 <br>
 

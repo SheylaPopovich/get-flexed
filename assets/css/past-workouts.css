@@ -85,11 +85,9 @@ h3 {
 }
 
 li {
-  font-family: "Alfa Slab One", cursive;
+  font-family: "Bitter", serif;
   color: white;
-  border-bottom: solid white;
-  font-size: 1.4rem;
- 
+  padding-bottom: 10%;
 }
 
 ul, ol {
